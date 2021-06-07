@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class catalog="CRS"
+           name = "pojo.SinhVien" table="SINHVIEN">
+        <id name="id" type="integer">
+            <column name="id" not-null="true"/>
+            <generator class="identity"/>
+        </id>
+        <property name = "maSV" type = "string">
+                  <column length="8" name="MaSV"/>
+        </property>
+        <property name = "matKhau" type = "string">
+                  <column length="8" name="MatKhau"/>
+        </property>
+        <property name = "tenSV" type = "string">
+                  <column length="50" name="TenSV"/>
+        </property>
+        <property name = "phai" type = "string">
+                  <column length="3" name="Phai"/>
+        </property>
+        <property name = "phai" type = "string">
+                  <column length="3" name="Phai"/>
+        </property>
+        <many-to-one class="pojo.Lop" name="maLop" fetch="select" lazy="false" >
+            <column name="id" not-null="true"/>
+        </many-to-one>
+    </class>
+</hibernate-mapping>
