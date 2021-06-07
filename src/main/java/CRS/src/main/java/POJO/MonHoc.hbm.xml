@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class catalog="CRS"
+           name = "pojo.MonHoc" table="MONHOC">
+        <id name="maMH" type="string">
+            <column length="10" name="MaMH" not-null="true"/>
+            <generator class="assigned"/>
+        </id>
+        <property name = "tenMH" type = "string">
+            <column length="50" name="TenMH"/>
+        </property>
+        <property name = "soTinChi" type = "integer">
+            <column name="SoTinChi"/>
+        </property>
+    </class>
+</hibernate-mapping>
+

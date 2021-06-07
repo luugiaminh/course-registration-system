@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class catalog="CRS"
+           name = "pojo.HocPhan" table="HOCPHAN">
+        <id name="id" type="integer">
+            <column name="id" not-null="true"/>
+            <generator class="indentity"/>
+        </id>
+        <many-to-one class="pojo.MonHoc" name ="maMH" fecth="join" lazy="false" cascade ="save-update,delete">
+            <column name="MaMH" unique="true"/>
+        </many-to-one>
+        <property name = "phong" type = "string">
+                  <column length="10" name="Phong"/>
+        </property>
+        <property name = "giaoVien" type = "string">
+                  <column length="50" name="giaoVien"/>
+        </property>
+        <property name = "ngayHoc" type = "string">
+                  <column length="10" name="ngayHoc"/>
+        </property>
+        <property name = "caHoc" type = "integer">
+                  <column name="CaHoc"/>
+        </property>
+        <property name = "slots" type = "integer">
+                  <column name="Slots"/>
+        </property>
+        <many-to-one class="pojo.KiDKHP" name ="id" fecth="join" lazy="false" cascade ="save-update,delete">
+            <column name="MaKiDKHP"/>
+        </many-to-one>
+    </class>
+</hibernate-mapping>
+

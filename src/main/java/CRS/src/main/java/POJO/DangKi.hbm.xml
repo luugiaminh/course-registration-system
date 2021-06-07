@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class catalog="CRS"
+           name = "pojo.DangKi" table="DANGKI">
+        <id name="id" type="integer">
+            <column name="TaiKhoan" not-null="true"/>
+            <generator class="indentity"/>
+        </id>
+        <many-to-one class="pojo.SinhVien" name ="id" fecth="join" lazy="false" cascade ="save-update,delete">
+            <column name="idSV" unique ="true"/>
+        </many-to-one>
+        <many-to-one class="pojo.HocPhan" name ="id" fecth="join" lazy="false" cascade ="save-update,delete">
+            <column name="idHP" unique ="true"/>
+        </many-to-one>
+        <property name = "ngayDK" type = "string">
+                  <column length="10" name="NgayDK"/>
+        </property>
+    </class>
+</hibernate-mapping>

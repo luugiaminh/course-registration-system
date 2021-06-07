@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class catalog="CRS"
+           name = "pojo.Lop" table="LOP">
+        <id name="id" type="integer">
+            <column name="id" not-null="true"/>
+            <generator class="indentity"/>
+        </id>
+        <property name = "tenLop" type = "string">
+                  <column length="6" name="TenLop"/>
+        </property>
+    </class>
+</hibernate-mapping>

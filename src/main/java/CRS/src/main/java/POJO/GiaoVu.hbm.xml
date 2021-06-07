@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class catalog="CRS"
+           name = "pojo.GiaoVu" table="GIAOVU">
+        <id name="taiKhoan" type="string">
+            <column length="8" name="TaiKhoan"/>
+            <generator class="assigned"/>
+        </id>
+        <property name = "matKhau" type = "string">
+                  <column length="8" name="MatKhau"/>
+        </property>
+        <property name = "tenGV" type = "string">
+                  <column length="50" name="TenGV"/>
+        </property>
+    </class>
+</hibernate-mapping>
